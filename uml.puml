@@ -1,0 +1,881 @@
+@startuml
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.EventInfo {
+- String name
++ String getName()
++ void setName(String)
+}
+interface ru.fazziclay.schoolguide.app.listener.OnUpdatePresetListBuiltinSignalListener {
+~ Status onSignal(GlobalBuiltinPresetList,boolean)
+}
+class ru.fazziclay.schoolguide.datafixer.Version {
+- int firstVersion
+- int latestVersion
+- List<Integer> versionsHistory
++ {static} Version createNone()
++ void addToVersionHistory(int)
++ int getFirstVersion()
++ void setFirstVersion(int)
++ int getLatestVersion()
++ void setLatestVersion(int)
+}
+class ru.fazziclay.schoolguide.app.global.GlobalKeys {
+- int versionManifest
+- int builtinSchedule
++ int getVersionManifest()
++ int getBuiltinSchedule()
+}
+class ru.fazziclay.schoolguide.app.UpdateCenterActivity {
++ {static} int NOTIFICATION_ID
++ {static} String NOTIFICATION_CHANNEL_ID
++ {static} int DEBUG_STATE
++ {static} boolean DEBUG_ALLOW_IN_DEBUG_BUILD
+- SchoolGuideApp app
+- ActivityUpdateCenterBinding binding
+- String currentVersionBuildType
+- String currentLanguage
+- AppTrace appTrace
++ {static} Intent getLaunchIntent(Context)
+# void onCreate(Bundle)
++ void updateUI(Status)
++ void setupLinkableText()
++ void setupColorizeText()
++ void load(StatusInterface)
+}
+interface ru.fazziclay.schoolguide.app.UpdateCenterActivity.StatusInterface {
+~ void run(Status)
+}
+enum ru.fazziclay.schoolguide.app.Status {
++  ERROR
++  UPDATED
++  OUTDATED
++ GlobalVersionManifest.ManifestVersion latestVersion
++ Exception exception
++ Status setException(Exception)
++ Status setLatestVersion(GlobalVersionManifest.ManifestVersion)
+}
+class ru.fazziclay.schoolguide.app.UpdateCenterActivity.IncompatibleVersionException {
+}
+class ru.fazziclay.schoolguide.util.MathUtil {
++ {static} int random(Random,int,int)
++ {static} double round(double,int)
++ {static} double average(long[])
+}
+class ru.fazziclay.schoolguide.callback.CallbackStorage {
+- List<CallbackInternal> callbacks
++ void run(RunCallbackInterface<T>)
+- void run(RunCallbackInterface<T>,int)
++ void deleteCallback(CallbackInternal)
++ void deleteCallback(T)
++ void addCallback(CallbackImportance,T)
++ void changeImportance(T,CallbackImportance)
+}
+interface ru.fazziclay.schoolguide.callback.CallbackStorage.RunCallbackInterface {
+~ Status run(CallbackStorage<T>,T)
+}
+class ru.fazziclay.schoolguide.callback.CallbackStorage.CallbackInternal {
+~ T callback
+~ CallbackImportance importance
+}
+class ru.fazziclay.schoolguide.util.FileUtil {
++ {static} void createDirIfNotExists(String)
+- {static} void createNew(String)
++ {static} String read(File,String)
++ {static} String read(File)
++ {static} String read(String,String)
++ {static} String read(String)
++ {static} void write(File,String)
++ {static} void write(String,String)
++ {static} boolean isExist(String)
++ {static} String fixPathSeparator(String)
++ {static} File[] getFilesList(String)
++ {static} void deleteDir(File)
+}
+class ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameActivity {
+- {static} String GAME_DATA_FILE
+- ActivityMathTreningGameBinding binding
+- File gameDataFile
+- MathTreningGameData gameData
+- float number1
+- float number2
+- float result
++ {static} Intent getLaunchIntent(Context)
+# void onCreate(Bundle)
+# void onPause()
+# void onResume()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+- void showSettingsDialog()
+- void showResetScoreDialog()
+- void clearInput()
+- void onKeyboardEnterKey()
+- void regenerateNumbers()
+- float calculate(String,float,float)
+- String createTaskText()
+- void updateTaskText()
+- void updateStatisticText()
+- void saveAll()
+}
+class ru.fazziclay.schoolguide.util.ListUtil {
++ {static} T getLatestElement(List<T>)
++ {static} T getLatestElement(T[])
+}
+class ru.fazziclay.schoolguide.app.MilkLog {
+- {static} boolean ENABLED
+- {static} boolean APP_TRACE_LOG
+- {static} boolean ANDROID_LOG
+- {static} String ANDROID_LOG_TAG
++ {static} void g(String,Exception)
++ {static} void g(String)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33TimeSegment {
++ int start
++ int duration
+}
+class ru.fazziclay.schoolguide.datafixer.DataFixer {
+- {static} int PRE36_VERSION
+- Context context
+- int currentAppVersion
+- AbstractScheme[] fixSchemes
+- Gson gson
+- File versionFile
+- Version version
+- AppTrace appTrace
++ void saveVersion()
++ void fixIfAvailable()
++ Context getAndroidContext()
++ AppTrace getAppTrace()
++ Gson getGson()
+}
+class ru.fazziclay.schoolguide.app.Settings {
+- boolean isNotification
+- boolean isDeveloperFeatures
+- int notificationStatusBeforeTime
+- boolean isStopForegroundIsNone
+- boolean isFirstMonday
+- boolean isPresetEditEventNameInNextLine
+- PresetEditActivity.ColorScheme presetEditColorScheme
+- boolean isBuiltinPresetList
++ boolean isNotification()
++ void setNotification(boolean)
++ boolean isDeveloperFeatures()
++ void setDeveloperFeatures(boolean)
++ int getNotificationStatusBeforeTime()
++ void setNotificationStatusBeforeTime(int)
++ boolean isHideEmptyNotification()
++ void setIsHideEmptyNotification(boolean)
++ boolean isFirstMonday()
++ void setFirstMonday(boolean)
++ boolean isPresetEditEventNameInNextLine()
++ void setPresetEditEventNameInNextLine(boolean)
++ PresetEditActivity.ColorScheme getPresetEditColorScheme()
++ void setPresetEditColorScheme(PresetEditActivity.ColorScheme)
++ boolean isBuiltinPresetList()
++ void setBuiltinPresetList(boolean)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37EventInfo {
++ String name
+}
+class ru.fazziclay.schoolguide.app.AppWidgetsList {
+- List<Integer> widgetsIds
+- boolean enableStatus
+- void fix()
++ void onWidgetsUpdate(int[])
++ void onWidgetsDelete(int[])
++ void setEnableStatus(boolean)
++ boolean isEnableStatus()
++ Integer[] getWidgetsIds()
+}
+interface ru.fazziclay.schoolguide.app.global.IGlobalData {
+~ int getGlobalKey()
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.ScheduleInformatorApp {
++ {static} String NOTIFICATION_CHANNEL_ID_NONE
++ {static} String NOTIFICATION_CHANNEL_ID_NEXT
++ {static} String NOTIFICATION_CHANNEL_ID_NOW
++ {static} int NOTIFICATION_ID
+- Notification notification
+- SchoolGuideApp app
+- AppTrace appTrace
+- Context context
+- Settings settings
+- NotificationManagerCompat notificationManagerCompat
+- AppWidgetManager appWidgetManager
+- File scheduleFile
+- AppPresetList appPresetList
+- InformatorService informatorService
+- boolean isServiceForeground
++ void saveAppSchedule()
++ void serviceStop()
++ void serviceStart()
++ Preset getSelectedPreset()
++ void setSelectedPreset(UUID)
++ int tick()
+- void _isHideNotifyManipulation()
++ void onServiceDestroy()
++ void registerService(InformatorService)
++ void startForeground()
++ void stopForeground()
++ void sendNotify()
++ Notification getNoneNotification()
++ File getScheduleFile()
++ AppPresetList getAppPresetList()
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.ScheduleInformatorApp.ScheduleInformatorNotification {
++ int smallIcon
++ String contentTitle
++ String contentText
++ String sub
++ Notification build(Context,String)
+}
+enum ru.fazziclay.schoolguide.callback.CallbackImportance {
++  MAX
++  HIGH
++  DEFAULT
++  LOW
++  MIN
+- int queuePosition
++ int getQueuePosition()
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37Schedule {
++ HashMap<UUID,V37Preset> presets
+}
+class ru.fazziclay.schoolguide.app.SettingsActivity {
++ {static} String KEY_NOTIFICATION_IS_NOTIFICATION
++ {static} String KEY_NOTIFICATION_IS_HIDE_EMPTY_NOTIFICATION
++ {static} String KEY_NOTIFICATION_INFO_BEFORE_TIME
++ {static} String KEY_PRESET_EDITOR_IS_FIRST_MONDAY
++ {static} String KEY_PRESET_EDITOR_EVENT_NAME_IN_NEXT_LINE
++ {static} String KEY_ADVANCED_IS_BUILTIN_PRESET_LIST
++ {static} String KEY_ADVANCED_IS_DEVELOPER_FEATURES
++ {static} String KEY_ADVANCED_SHARE_APP_TRACE
+- SchoolGuideApp app
+- Settings settings
+- SharedPreferences preferences
+- SharedPreferences.OnSharedPreferenceChangeListener changeListener
++ {static} Intent getLaunchIntent(Context)
+# void onCreate(Bundle)
+# void onDestroy()
+}
+class ru.fazziclay.schoolguide.app.SettingsActivity.SettingsFragment {
++ void onCreatePreferences(Bundle,String)
+- void showShareAppTraceDialog()
+}
+class ru.fazziclay.schoolguide.app.DebugActivity {
+- SchoolGuideApp app
+- ActivityDebugBinding binding
++ {static} Intent getLaunchIntent(Context)
+# void onCreate(Bundle)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33LessonInfo {
++ String name
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.PresetList {
+- HashMap<UUID,Preset> presets
+- void fix()
++ Preset getPreset(UUID)
++ void putPreset(UUID,Preset)
++ UUID addPreset(Preset)
++ UUID[] getPresetsIds(boolean)
++ UUID[] getPresetsIds()
++ Preset[] getPresets(boolean)
++ void removePreset(UUID)
+}
+class ru.fazziclay.schoolguide.app.SchoolGuideService {
++ void onCreate()
++ int onStartCommand(Intent,int,int)
++ IBinder onBind(Intent)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33Schedule {
++ HashMap<UUID,V33LessonInfo> lessons
++ HashMap<UUID,V33LocalSchedule> schedules
+}
+class ru.fazziclay.schoolguide.app.LaunchActivity {
+# void onCreate(Bundle)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37Preset {
++ String name
++ String author
++ HashMap<UUID,V37EventInfo> eventsInfos
++ List<V37Event> eventsPositions
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37Settings {
++ boolean isDeveloperFeatures
++ boolean isBuiltinPresetList
+}
+class ru.fazziclay.schoolguide.app.global.GlobalBuiltinPresetList {
+- int key
++ int getGlobalKey()
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.AppPresetList {
+- UUID selectedPresetUUID
++ Preset getSelectedPreset()
++ void setSelectedPreset(UUID)
++ UUID getSelectedPresetId()
++ UUID selectFirstByDisplayName()
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetListActivity {
++ {static} int PRESET_NAME_MAX_LENGTH
++ {static} int PRESET_NAME_MAX_LINES
+- SchoolGuideApp app
+- ScheduleInformatorApp informatorApp
+- ActivityPresetListBinding binding
+- MenuItem openUpdateCenterMenuItem
+- MenuItem openDebugItem
+- MenuItem openAboutItem
+- PresetList presetList
+- PresetListUpdateSignalListener presetListUpdateSignalListener
+- OnDebugSignalListener onDebugSignalListener
+- OnUserSettingsChangeListener onUserSettingsChangeListener
+- OnGlobalUpdatedListener onGlobalUpdatedListener
+- CheckBox previousCheckedCheckbox
++ {static} Intent getLaunchIntent(Context)
+# void onCreate(Bundle)
+# void onResume()
+# void onDestroy()
++ boolean onCreateOptionsMenu(Menu)
+- void registerListeners()
+- void updateOpenUpdateCenterMenuName()
++ boolean onOptionsItemSelected(MenuItem)
+- void showDisableBatteryOptimizationDialog()
+- void showCreateNewPresetDialog()
+- void showDeletePresetDialog(UUID)
+- void showCopyPresetDialog(UUID)
+- void showRenamePresetDialog(UUID)
+- void setupListAdapter()
+- View getPresetView(UUID,Preset)
+}
+class ru.fazziclay.schoolguide.app.AboutActivity {
+~ ActivityAboutBinding binding
+# void onCreate(Bundle)
+}
+interface ru.fazziclay.schoolguide.app.listener.OnDebugSignalListener {
+~ Status run(String)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33Lesson {
++ UUID lesson
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37AppSchedule {
++ UUID selectedPresetUUID
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.Preset {
+- String name
+- String author
+- boolean oneDayMode
+- boolean syncedByGlobal
++ HashMap<UUID,EventInfo> eventsInfos
++ List<Event> eventsPositions
++ Event getNowEvent()
++ Event getNextEvent()
++ CompressedEvent getNowCompressedEvent()
++ CompressedEvent getNextCompressedEvent()
++ CompressedEvent compressEvent(Event)
++ Preset clone()
++ EventInfo getEventInfo(UUID)
++ void setAuthor(String)
++ void setName(String)
++ String getName()
++ String getAuthor()
++ boolean isSyncedByGlobal()
++ void setSyncedByGlobal(boolean)
++ boolean isOneDayMode()
++ void setOneDayMode(boolean)
+}
+class ru.fazziclay.schoolguide.util.AppTrace {
+- {static} String TEXT_BASE
+- {static} String TEXT_APPLICATION
+- {static} String TEXT_DEVICE
+- {static} String POINT_BASE
+- long initTimeMillis
+- Thread initThread
+- String initMessage
+- StackTraceElement[] initStackTrace
+- int initActiveThreadsCount
+- List<Point> points
+- boolean pointDebugLogException
+- void ignoreException(Runnable)
++ void point(String,Throwable)
++ void point(String)
+- String formatMultilineMessage(String)
+- String formatPoints()
++ String getText()
+- {static} String stackTraceToString(StackTraceElement[])
+- {static} String variable(String,String,Object)
+- {static} String variable(String,Object[][])
+}
+class ru.fazziclay.schoolguide.util.AppTrace.Point {
+- Thread thread
+- String message
+- Throwable throwable
+- StackTraceElement[] stackTrace
+- long timeMillis
+- long timeNanos
++ String format(int)
+}
+abstract class ru.fazziclay.schoolguide.datafixer.schem.AbstractScheme {
++ {abstract}boolean isCompatible(Version)
++ {abstract}Version run(DataFixer,Version)
+}
+enum ru.fazziclay.schoolguide.util.time.ConvertMode {
++  HHMMSS
++  hhMMSS
++  HHMM
+}
+class ru.fazziclay.schoolguide.util.Crutches {
++ {static} void appInitializationDelay(long)
+}
+interface ru.fazziclay.schoolguide.callback.Callback {
+}
+class ru.fazziclay.schoolguide.app.MainWidgetConfigureActivity {
+- {static} String PREFS_NAME
+- {static} String PREF_PREFIX_KEY
+~ int mAppWidgetId
+~ EditText mAppWidgetText
+~ View.OnClickListener mOnClickListener
+- MainWidgetConfigureBinding binding
+~ {static} void saveTitlePref(Context,int,String)
+~ {static} String loadTitlePref(Context,int)
+~ {static} void deleteTitlePref(Context,int)
++ void onCreate(Bundle)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37MathTreningGameData {
++ int score
++ String action
++ int n1RangeMin
++ int n1RangeMax
++ int n2RangeMin
++ int n2RangeMax
+}
+class ru.fazziclay.schoolguide.app.ErrorCode {
++ {static} int ERROR_APP_GET_RETURN_NULL
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.WeekTimeSegment {
+- {static} int SECONDS_IN_DAY
+- {static} int SECONDS_IN_WEEK
+- int start
+- int end
++ boolean isNow()
++ int remainsUntilStart()
++ int remainsUntilEnd()
++ boolean isNextWeek()
++ int toNextWeek(int)
++ int getStart()
++ int getEnd()
++ void setStart(int)
++ void setEnd(int)
+}
+class ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameData {
+- int score
+- String action
+- GenRange firstNumberGenerator
+- GenRange latestNumberGenerator
++ int getScore()
++ String getAction()
++ GenRange getFirstNumberGenerator()
++ GenRange getLatestNumberGenerator()
++ void setScore(int)
++ void setAction(String)
+}
+class ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameData.GenRange {
+- int minimum
+- int maximum
++ boolean isMinMoreMax()
++ void fixIsAvailable()
++ void flip()
++ int getMinimum()
++ void setMinimum(int)
++ int getMaximum()
++ void setMaximum(int)
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetEditActivity {
+- {static} int SECONDS_IN_DAY
+- {static} String EXTRA_PRESET_UUID
+- SchoolGuideApp app
+- Settings settings
+~ ScheduleInformatorApp informatorApp
+- ActivityPresetEditBinding binding
+- DateFormatSymbols dateFormatSymbols
+~ UUID presetUUID
+- Preset preset
+- boolean isFirstMonday
+- MenuItem enableOneDayModeItem
+- boolean isOneDayMode
++ {static} Intent getLaunchIntent(Context,UUID)
+# void onCreate(Bundle)
+# void onResume()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+- int[] getWeekDaysArray()
+- void showEventDialog(Event)
+- void showEnableOneDayCrutchDialog()
+- SpinnerSetup<UUID> applyEventInfosToSpinner(Spinner,Event)
+- void showColorSchemeDialog()
+- CompressedEvent[] compressAll(Event[])
+- Event[] getEventsInWeek(int)
+- void updateEventList()
+- BaseExpandableListAdapter getListAdapter()
+- View getWeekEventView(int,int)
+- View getEmptyView()
+- View getWeekView(int)
++ {static} int posToWeek(boolean,int)
+- void _cleanupAllNoSunday()
+- void _cloneSundayToAll()
+- void _sortPositions()
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetEditActivity.SpinnerSetup {
+~ V[] values
+~ String[] names
+~ V selectedValue
+~ String selectedName
+~ int selectedPosition
+}
+enum ru.fazziclay.schoolguide.app.scheduleinformator.android.ColorScheme {
++  DEFAULT
++  YESTERDAY
+}
+class ru.fazziclay.schoolguide.callback.Status {
+- boolean isDeleteCallback
+- boolean isChangeImportance
+- CallbackImportance newImportance
++ boolean isDeleteCallback()
++ boolean isChangeImportance()
++ CallbackImportance getNewImportance()
+}
+class ru.fazziclay.schoolguide.callback.Status.Builder {
+- boolean isDeleteCallback
+- boolean isChangeImportance
+- CallbackImportance newImportance
++ Builder setDeleteCallback(boolean)
++ Builder setNewImportance(CallbackImportance)
++ Status build()
+}
+class ru.fazziclay.schoolguide.util.DataUtil {
++ {static} T load(Gson,File,Class<T>)
++ {static} T load(File,Class<T>)
++ {static} void save(Gson,File,Object)
++ {static} void save(File,Object)
+- {static} Gson getGson()
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37WeekTimeSegment {
++ int start
++ int end
+}
+interface ru.fazziclay.schoolguide.app.listener.OnUserSettingsChangeListener {
+~ Status run(String)
+}
+class ru.fazziclay.schoolguide.app.MainWidget {
+- AppWidgetsList appWidgetsList
+- SchoolGuideApp app
+- boolean appWidgetsFromApp
++ void onUpdate(Context,AppWidgetManager,int[])
++ void onDeleted(Context,int[])
++ void onEnabled(Context)
++ void onDisabled(Context)
+- AppWidgetsList getInFile(Context)
+- void get(Context)
+- void save(Context)
+}
+enum ru.fazziclay.schoolguide.util.time.HumanTimeType {
++  SECONDS_OF_MINUTE
++  MINUTE_OF_HOUR
++  HOUR
+}
+interface ru.fazziclay.schoolguide.app.listener.PresetListUpdateSignalListener {
+~ Status onSignal()
+}
+class ru.fazziclay.schoolguide.datafixer.old.v37.V37Event {
++ UUID eventInfo
+}
+class ru.fazziclay.schoolguide.app.PresetEditEventEditDialogStateCache {
++ int latestStartSelected
++ int latestEndSelected
+}
+class ru.fazziclay.schoolguide.app.SharedConstrains {
++ {static} int APPLICATION_VERSION_CODE
++ {static} String APPLICATION_VERSION_NAME
++ {static} String APPLICATION_ID
++ {static} String APPLICATION_BUILD_TYPE
++ {static} String KEYS_V2
++ {static} String VERSION_MANIFEST_V2
++ {static} String BUILTIN_SCHEDULE_V2
++ {static} String APP_WIDGETS_LIST_FILE
++ {static} String LATEST_APP_TRACE_FILE
++ {static} AbstractScheme[] DATA_FIXER_SCHEMES
++ {static} long CRUTCH_INIT_DELAY
++ {static} List<NotificationChannel> getNotificationChannels(Context)
++ {static} View getAppNullView(Activity)
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.InformatorService {
+- {static} int MAX_REPORTS_ERRORS
+- ScheduleInformatorApp scheduleInformatorApp
+- Handler handler
+- Runnable runnable
+- int reportedErrors
++ void onCreate()
++ int onStartCommand(Intent,int,int)
++ void onDestroy()
++ IBinder onBind(Intent)
+}
+class ru.fazziclay.schoolguide.datafixer.schem.Scheme37To50 {
+- {static} String MATH_TRENING_FILE
++ boolean isCompatible(Version)
++ Version run(DataFixer,Version)
+}
+abstract class ru.fazziclay.schoolguide.util.AfterTextWatcher {
++ void beforeTextChanged(CharSequence,int,int,int)
++ void onTextChanged(CharSequence,int,int,int)
+}
+interface ru.fazziclay.schoolguide.app.scheduleinformator.SelectablePresetList {
+~ Preset getSelectedPreset()
+~ void setSelectedPreset(UUID)
+~ UUID getSelectedPresetId()
+~ UUID selectFirstByDisplayName()
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33Settings {
++ List<Integer> versionsHistory
++ boolean isDeveloperFeatures
++ UUID selectedLocalSchedule
++ boolean isSyncDeveloperSchedule
+}
+class ru.fazziclay.schoolguide.datafixer.old.v50.V50MathTreningGameData {
++ int score
++ String action
++ GenRange firstNumberGenerator
++ GenRange latestNumberGenerator
+}
+class ru.fazziclay.schoolguide.datafixer.old.v50.V50MathTreningGameData.GenRange {
++ int minimum
++ int maximum
+}
+class ru.fazziclay.schoolguide.util.UUIDUtil {
++ {static} UUID generateUUID(UUID[])
++ {static} UUID generateUUID()
+}
+class ru.fazziclay.schoolguide.util.NetworkUtil {
+- {static} boolean DEBUG
++ {static} String parseTextPage(String)
+}
+interface ru.fazziclay.schoolguide.app.listener.OnWidgetsEnableStatusChangeListener {
+~ Status onChange(boolean)
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.CompressedEvent {
+- String name
+- UUID eventInfoUUID
++ {static} CompressedEvent create(Event,EventInfo)
++ String getName()
++ UUID getEventInfoUUID()
++ String toString()
+}
+class ru.fazziclay.schoolguide.app.global.GlobalManager {
+- {static} String CACHE_LOCAL_VERSION_MANIFEST
+- {static} String CACHE_LOCAL_BUILTIN_SCHEDULE
+- {static} String THREAD_NAME
+- {static} String EXCEPTION_NULLPOINTEREXCEPTION_APP
+- {static} String EXCEPTION_NULLPOINTEREXCEPTION_INTERFACE
+- {static} String EXCEPTION_NULLPOINTEREXCEPTION_TO_FAILED
++ {static} void getInExternalThread(SchoolGuideApp,ResponseInterface)
++ {static} void getInCurrentThread(SchoolGuideApp,boolean,ResponseInterface)
+}
+interface ru.fazziclay.schoolguide.app.global.GlobalManager.ResponseInterface {
+~ void failed(Exception)
+~ void success(GlobalKeys,GlobalVersionManifest,GlobalBuiltinPresetList)
+}
+class ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.Event {
+- UUID eventInfo
++ UUID getEventInfo()
++ void setEventInfo(UUID)
+}
+class ru.fazziclay.schoolguide.datafixer.schem.v33to35.SchemePre36To37 {
+~ String OLD_MANIFEST_FILE
+~ String OLD_STATECACHE_FILE
+~ String OLD_SCHEDULE_FILE
+~ String OLD_SETTINGS_FILE
+~ String NEW_SCHEDULE_FILE
+~ String NEW_SETTINGS_FILE
+~ AppTrace appTrace
+~ Gson gson
+~ Context context
+~ File cacheDir
+~ File filesDir
+~ File oldManifestFile
+~ File oldStateCacheFile
+~ File oldScheduleFile
+~ File oldSettingsFile
+~ File newScheduleFile
+~ File newSettingsFile
+~ V33Schedule oldSchedule
+~ V37AppSchedule newSchedule
+~ V33Settings oldSettings
+~ V37Settings newSettings
++ boolean isCompatible(Version)
++ Version run(DataFixer,Version)
+- void fix()
+- void fixSchedule()
+- void fixSettings()
+}
+class ru.fazziclay.schoolguide.app.SchoolGuideApp {
+- {static} SchoolGuideApp instance
+- AppTrace appTrace
+- Context androidContext
+- File filesDir
+- File cacheDir
+- File settingsFile
+- Gson gson
+- Settings settings
+- File appWidgetsListFile
+- AppWidgetsList appWidgetsList
+- ScheduleInformatorApp scheduleInformatorApp
+- boolean isUpdateAvailable
+- PresetEditEventEditDialogStateCache presetEditEventEditDialogStateCache
+- CallbackStorage<OnGlobalUpdatedListener> globalUpdateCallbacks
+- CallbackStorage<PresetListUpdateSignalListener> presetListUpdateCallbacks
+- CallbackStorage<OnUserSettingsChangeListener> onUserChangeSettingsCallbacks
+- CallbackStorage<OnDebugSignalListener> debugSignalListenerCallbacks
+- CallbackStorage<OnUpdatePresetListBuiltinSignalListener> updatePresetListBuiltinSignalListenerCallbacks
+- CallbackStorage<OnWidgetsEnableStatusChangeListener> widgetsEnableStatusChangeListenerCallbacks
++ {static} boolean isInstanceAvailable()
++ {static} SchoolGuideApp get(Context)
++ {static} SchoolGuideApp get()
+- void registerCallbacks()
++ void sendUpdateNotify()
++ void sendErrorNotification()
++ {static} void registerNotificationChannels(Context)
++ void saveSettings()
++ void saveAppTrace()
++ void saveAppWidgetsList()
++ void pendingUpdateGlobal()
++ void pendingUpdateGlobal(boolean)
++ AppTrace getAppTrace()
++ Context getAndroidContext()
++ File getCacheDir()
++ File getFilesDir()
++ Gson getGson()
++ File getSettingsFile()
++ Settings getSettings()
++ ScheduleInformatorApp getScheduleInformatorApp()
++ boolean isUpdateAvailable()
++ void setUpdateAvailable(boolean)
++ CallbackStorage<OnGlobalUpdatedListener> getGlobalUpdateCallbacks()
++ CallbackStorage<PresetListUpdateSignalListener> getPresetListUpdateCallbacks()
++ PresetEditEventEditDialogStateCache getPresetEditEventEditDialogStateCache()
++ CallbackStorage<OnUserSettingsChangeListener> getOnUserChangeSettingsCallbacks()
++ CallbackStorage<OnDebugSignalListener> getDebugSignalListenerCallbacks()
++ CallbackStorage<OnUpdatePresetListBuiltinSignalListener> getUpdatePresetListBuiltinSignalListenerCallbacks()
++ File getAppWidgetsListFile()
++ AppWidgetsList getAppWidgetsList()
++ CallbackStorage<OnWidgetsEnableStatusChangeListener> getWidgetsEnableStatusChangeListenerCallbacks()
+}
+class ru.fazziclay.schoolguide.util.SortUtil {
++ {static} void sort(T[],StringConsumer<T>)
+}
+interface ru.fazziclay.schoolguide.util.SortUtil.StringConsumer {
+~ String get(T)
+}
+class ru.fazziclay.schoolguide.util.time.TimeUtil {
++ {static} int SECONDS_IN_MINUTE
++ {static} int SECONDS_IN_HOUR
++ {static} int SECONDS_IN_DAY
++ {static} int SECONDS_IN_WEEK
++ {static} int getHumanValue(long,HumanTimeType)
++ {static} String convertToHumanTime(int,ConvertMode)
++ {static} String toFixed(int,int)
++ {static} int getDaySeconds()
++ {static} int getWeekSeconds()
+}
+class ru.fazziclay.schoolguide.app.global.GlobalVersionManifest {
+- int key
+- ManifestVersion latestVersion
++ int getGlobalKey()
++ ManifestVersion getLatestVersion()
+}
+class ru.fazziclay.schoolguide.app.global.GlobalVersionManifest.ManifestVersion {
+- int code
+- String name
+- HashMap<String,String> changelog
+- HashMap<String,String> download
++ int getCode()
++ String getName()
++ String getDownloadUrl(String)
++ String getChangelog(String)
+}
+class ru.fazziclay.schoolguide.datafixer.old.v33.V33LocalSchedule {
++ String name
++ List<V33Lesson> monday
++ List<V33Lesson> tuesday
++ List<V33Lesson> wednesday
++ List<V33Lesson> thursday
++ List<V33Lesson> friday
++ List<V33Lesson> saturday
++ List<V33Lesson> sunday
+}
+interface ru.fazziclay.schoolguide.app.listener.OnGlobalUpdatedListener {
+~ Status run(GlobalKeys,GlobalVersionManifest,GlobalBuiltinPresetList)
+}
+class ru.fazziclay.schoolguide.util.ColorUtil {
+- {static} boolean DEBUG_COLORIZE
++ {static} String colorToHex(int)
+- {static} String byteToHex(int)
++ {static} SpannableString colorize(String,int,int,int)
+}
+class ru.fazziclay.schoolguide.util.ColorUtil.SpanText {
+~ String text
+~ int fgColor
+~ int bgColor
+~ int style
+~ int start
+~ int end
++ void appendText(String)
++ boolean spanEquals(int,int,int)
++ String toString()
+}
+
+
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.OnUpdatePresetListBuiltinSignalListener
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.UpdateCenterActivity
+ru.fazziclay.schoolguide.app.UpdateCenterActivity +.. ru.fazziclay.schoolguide.app.UpdateCenterActivity.StatusInterface
+ru.fazziclay.schoolguide.app.UpdateCenterActivity +.. ru.fazziclay.schoolguide.app.UpdateCenterActivity.IncompatibleVersionException
+ru.fazziclay.schoolguide.app.Exception <|-- ru.fazziclay.schoolguide.app.UpdateCenterActivity.IncompatibleVersionException
+ru.fazziclay.schoolguide.callback.CallbackStorage +.. ru.fazziclay.schoolguide.callback.CallbackStorage.RunCallbackInterface
+ru.fazziclay.schoolguide.callback.CallbackStorage +.. ru.fazziclay.schoolguide.callback.CallbackStorage.CallbackInternal
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameActivity
+ru.fazziclay.schoolguide.app.scheduleinformator.ScheduleInformatorApp +.. ru.fazziclay.schoolguide.app.scheduleinformator.ScheduleInformatorApp.ScheduleInformatorNotification
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.SettingsActivity
+ru.fazziclay.schoolguide.app.SettingsActivity +.. ru.fazziclay.schoolguide.app.SettingsActivity.SettingsFragment
+ru.fazziclay.schoolguide.app.PreferenceFragmentCompat <|-- ru.fazziclay.schoolguide.app.SettingsActivity.SettingsFragment
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.DebugActivity
+android.app.Service <|-- ru.fazziclay.schoolguide.app.SchoolGuideService
+android.app.Activity <|-- ru.fazziclay.schoolguide.app.LaunchActivity
+ru.fazziclay.schoolguide.app.global.IGlobalData <|.. ru.fazziclay.schoolguide.app.global.GlobalBuiltinPresetList
+ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.PresetList <|-- ru.fazziclay.schoolguide.app.global.GlobalBuiltinPresetList
+ru.fazziclay.schoolguide.app.scheduleinformator.SelectablePresetList <|.. ru.fazziclay.schoolguide.app.scheduleinformator.AppPresetList
+ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.PresetList <|-- ru.fazziclay.schoolguide.app.scheduleinformator.AppPresetList
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetListActivity
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.AboutActivity
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.OnDebugSignalListener
+ru.fazziclay.schoolguide.datafixer.old.v33.V33TimeSegment <|-- ru.fazziclay.schoolguide.datafixer.old.v33.V33Lesson
+ru.fazziclay.schoolguide.datafixer.old.v37.V37Schedule <|-- ru.fazziclay.schoolguide.datafixer.old.v37.V37AppSchedule
+ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.Cloneable <|.. ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.Preset
+ru.fazziclay.schoolguide.util.AppTrace +.. ru.fazziclay.schoolguide.util.AppTrace.Point
+android.app.Activity <|-- ru.fazziclay.schoolguide.app.MainWidgetConfigureActivity
+ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameData +.. ru.fazziclay.schoolguide.app.multiplicationtrening.MathTreningGameData.GenRange
+androidx.appcompat.app.AppCompatActivity <|-- ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetEditActivity
+ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetEditActivity +.. ru.fazziclay.schoolguide.app.scheduleinformator.android.PresetEditActivity.SpinnerSetup
+ru.fazziclay.schoolguide.callback.Status +.. ru.fazziclay.schoolguide.callback.Status.Builder
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.OnUserSettingsChangeListener
+android.appwidget.AppWidgetProvider <|-- ru.fazziclay.schoolguide.app.MainWidget
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.PresetListUpdateSignalListener
+ru.fazziclay.schoolguide.datafixer.old.v37.V37WeekTimeSegment <|-- ru.fazziclay.schoolguide.datafixer.old.v37.V37Event
+android.app.Service <|-- ru.fazziclay.schoolguide.app.scheduleinformator.InformatorService
+ru.fazziclay.schoolguide.datafixer.schem.AbstractScheme <|-- ru.fazziclay.schoolguide.datafixer.schem.Scheme37To50
+android.text.TextWatcher <|.. ru.fazziclay.schoolguide.util.AfterTextWatcher
+ru.fazziclay.schoolguide.datafixer.old.v50.V50MathTreningGameData +.. ru.fazziclay.schoolguide.datafixer.old.v50.V50MathTreningGameData.GenRange
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.OnWidgetsEnableStatusChangeListener
+ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.WeekTimeSegment <|-- ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.CompressedEvent
+ru.fazziclay.schoolguide.app.global.GlobalManager +.. ru.fazziclay.schoolguide.app.global.GlobalManager.ResponseInterface
+ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.WeekTimeSegment <|-- ru.fazziclay.schoolguide.app.scheduleinformator.appschedule.Event
+ru.fazziclay.schoolguide.datafixer.schem.AbstractScheme <|-- ru.fazziclay.schoolguide.datafixer.schem.v33to35.SchemePre36To37
+ru.fazziclay.schoolguide.util.SortUtil +.. ru.fazziclay.schoolguide.util.SortUtil.StringConsumer
+ru.fazziclay.schoolguide.app.global.IGlobalData <|.. ru.fazziclay.schoolguide.app.global.GlobalVersionManifest
+ru.fazziclay.schoolguide.app.global.GlobalVersionManifest +.. ru.fazziclay.schoolguide.app.global.GlobalVersionManifest.ManifestVersion
+ru.fazziclay.schoolguide.callback.Callback <|-- ru.fazziclay.schoolguide.app.listener.OnGlobalUpdatedListener
+ru.fazziclay.schoolguide.util.ColorUtil +.. ru.fazziclay.schoolguide.util.ColorUtil.SpanText
+@enduml

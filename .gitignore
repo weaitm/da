@@ -1,0 +1,10 @@
+local.properties
+.gradle
+/gradle
+.DS_Store
+/build
+*.iml
+/captures
+.externalNativeBuild
+.cxx
+/app/release/

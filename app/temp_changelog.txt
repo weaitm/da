@@ -1,0 +1,3 @@
+~ 2 March
+FIX SCHEDULEINFORMATOR BUG: уведомление просто отправлялось, а не ставилось как передний план
+~ TODO: new date

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="application_name" translatable="false">KiwSchool</string>
+    <string name="application_description" translatable="false">Help schoolboys and schoolgirls!</string>
+
+    <string name="application_name_dev" translatable="false">KiwSchool - DEV</string>
+
+    <!-- Rewritten v36 -->
+    <string name="updatecenter_activityTitle">KiwSchool - Update Center</string>
+    <string name="updatecenter_loading">Loading</string>
+    <string name="updatecenter_error_title">Error :(</string>
+    <string name="updatecenter_error_unknownHost_text">$[-#ff2222]No $[@bold]network$[@reset] connection!</string>
+    <string name="updatecenter_error_unknownHost_reload">Reload</string>
+    <string name="updatecenter_error_fileNotFound_text">"$[@bold;-#ff0000]The service is closed :($[@reset;-reset]\nThe app couldn't find the latest version, $[@bold;-#dddddd]we recommend going to the project page:$[@reset;-reset]\nhttps://github.com/FazziCLAY/SchoolGuide"</string>
+    <string name="updatecenter_error_incompatibleVersion_text">"$[@bold;-#ff0000]Update center unavailable in debug-build app!$[@reset;-reset]\n\n$[@bold;-#dddddd]Download latest stable version:$[@reset;-reset]\nhttps://fazziclay.github.io/schoolguide"</string>
+    <string name="updatecenter_error_generic_text">$[-#ffffff;@bold]Unknown error.$[@reset;-reset]\nThe application could not recognize the error, most likely there are technical problems now\nError:$[=#080607;-#cc0000;=#000000] %s</string>
+    <string name="updatecenter_updated_title">Updated</string>
+    <string name="updatecenter_updated_text">$[-#a0a0ff]The $[@bold;-#7070ff]latest version$[@reset;-#a0a0ff] is currently installed</string>
+    <string name="updatecenter_outdated_title">Update available\n%s</string>
+    <string name="updatecenter_outdated_changelogEmpty_text">Change log is null.</string>
+    <string name="updatecenter_outdated_openDownloadLink">Download</string>
+    <string name="updatecenter_outdated_downloadError_activityNotFound">Please install web browser (for example FireFox)</string>
+    <string name="updatecenter_outdated_downloadError_urlNull">Error: URL is null</string>
+    <string name="updatecenter_notification_title">Update Available</string>
+    <string name="updatecenter_notification_text">Please download app update</string>
+
+    <string name="mainOptionMenu_openUpdateCenter">Update center</string>
+    <string name="mainOptionMenu_openUpdateCenter_available">(!) UPDATE AVAILABLE (!)</string>
+    <string name="mainOptionMenu_openMathTreningGame">Game \'MathTrening\'</string>
+    <string name="mainOptionMenu_openSettings">Settings</string>
+    <string name="mainOptionMenu_openDebug">Debug</string>
+    <string name="mainOptionMenu_openAbout">About app</string>
+
+    <string name="mathTreningGame_activityTitle">KiwSchool - MathTrening</string>
+    <string name="mathTreningGame_optionMenu_skip">Skip</string>
+    <string name="mathTreningGame_optionMenu_gameSettings">Game settings</string>
+    <string name="mathTreningGame_statistic">Score: %s</string>
+    <string name="mathTreningGame_resultInput_hint">Result</string>
+    <string name="mathTreningGame_settings_title">Game settings</string>
+    <string name="mathTreningGame_settings_action">Action:</string>
+    <string name="mathTreningGame_settings_generation">Generation:</string>
+    <string name="mathTreningGame_settings_generation_number1">Number 1:</string>
+    <string name="mathTreningGame_settings_generation_number2">Number 2:</string>
+    <string name="mathTreningGame_settings_generation_min">MINimal</string>
+    <string name="mathTreningGame_settings_generation_max">MAXimum</string>
+    <string name="mathTreningGame_settings_cancel">Cancel</string>
+    <string name="mathTreningGame_settings_apply">Apply</string>
+    <string name="mathTreningGame_settings_resetScore">Reset score</string>
+    <string name="mathTreningGame_settings_exception_number">Number error!</string>
+    <string name="mathTreningGame_resetScore_title">Reset score</string>
+    <string name="mathTreningGame_resetScore_message">Do you really want to reset the game score?</string>
+    <string name="mathTreningGame_resetScore_reset">Reset!</string>
+    <string name="mathTreningGame_resetScore_cancel">Cancel</string>
+    <string name="mathTreningGame_resetScore_easterEgg1">EASTER EGG: A lovko ti eto pridumal, ya daze snashala ne ponal (RU)</string>
+
+    <string name="presetList_activityTitle">KiwSchool - Presets list</string>
+    <string name="presetList_addPreset_contentDescription">Add preset</string>
+    <string name="presetList_createNew_nameHint">Enter name</string>
+    <string name="presetList_createNew_title">Create new preset</string>
+    <string name="presetList_createNew_create">Create</string>
+    <string name="presetList_createNew_cancel">Cancel</string>
+    <string name="presetList_delete_title">Delete preset \'%s\'</string>
+    <string name="presetList_delete_message">Do you really want to delete preset?</string>
+    <string name="presetList_delete">Delete</string>
+    <string name="presetList_delete_cancel">Cancel</string>
+    <string name="presetList_copy_nameHint">Enter new name</string>
+    <string name="presetList_copy_title">Copy preset \'%s\'</string>
+    <string name="presetList_copy_message">Do you want to make a copy of the preset?\nYou can enter a name for the new preset</string>
+    <string name="presetList_copy">Copy</string>
+    <string name="presetList_copy_cancel">Cancel</string>
+    <string name="presetList_copy_copyPattern">Copy of \'%s\'</string>
+    <string name="presetList_exception_presetNameEmpty">The name should not be empty</string>
+    <string name="presetList_rename_nameHint">Enter new name</string>
+    <string name="presetList_rename_title">Rename \'%s\'</string>
+    <string name="presetList_rename_message" />
+    <string name="presetList_rename">Rename</string>
+    <string name="presetList_rename_cancel">Cancel</string>
+    <string name="presetList_emptyMessage_title">No presets</string>
+    <string name="presetList_emptyMessage_message">Click + button or copy from built-in preset list</string>
+    <string name="presetList_error_getPresetView_nullArgs">Error! null</string>
+
+    <string name="presetMenu_copy">Copy</string>
+    <string name="presetMenu_delete">Delete</string>
+    <string name="presetMenu_colorScheme">Color scheme</string>
+    <string name="presetMenu_rename">Rename</string>
+    <string name="presetMenu_oneDayMode">One day mode (INDEV)</string>
+
+    <string name="presetEdit_activityTitle">Preset \'%s\'</string>
+    <string name="presetEdit_colorScheme_default">Default</string>
+    <string name="presetEdit_colorScheme_default_description">Default - default colors</string>
+    <string name="presetEdit_colorScheme_yesterday">Previous</string>
+    <string name="presetEdit_colorScheme_yesterday_description">Previous - coloring the event in green if it was not there last day, and if it was, then gray</string>
+    <string name="presetEdit_colorScheme_apply">Apply</string>
+    <string name="presetEdit_colorScheme_title">Color Scheme</string>
+    <string name="presetEdit_colorScheme_message" />
+    <string name="presetEdit_colorScheme_cancel">Cancel</string>
+    <string name="presetEdit_addEvent_contentDescription">Add event</string>
+    <string name="presetEdit_emptyDay"><![CDATA[<Empty>]]></string>
+    <string name="presetEdit_error_presetNotFound">Error: Preset not found</string>
+    <string name="presetEdit_eventDialog_title_edit">Event Edit</string>
+    <string name="presetEdit_eventDialog_title_add">Add event</string>
+    <string name="presetEdit_eventDialog_cancel">Cancel</string>
+    <string name="presetEdit_eventDialog_apply">Apply</string>
+    <string name="presetEdit_eventDialog_eventsInfos_createNew"><![CDATA[<Create new>]]></string>
+    <string name="presetEdit_eventDialog_delete">Delete</string>
+    <string name="presetEdit_eventDialog_delete_cancel">Cancel</string>
+    <string name="presetEdit_eventDialog_delete_apply">DELETE!</string>
+    <string name="presetEdit_eventDialog_event_title">Event Target:</string>
+    <string name="presetEdit_eventDialog_event_name_hint">Enter new name</string>
+    <string name="presetEdit_eventDialog_startTime_title">Start time:</string>
+    <string name="presetEdit_eventDialog_endTime_title">End time:</string>
+    <string name="presetEdit_eventDialog_error_prefix">"Error: "</string>
+    <string name="presetEdit_eventDialog_error_nameEmpty">New event name is empty!</string>
+    <string name="presetEdit_eventDialog_error_time">Time format error!</string>
+
+    <string name="notificationChannel_scheduleInformator_scheduleNow_name">Schedule (NOW)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNow_description">Now there is something planned</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNext_name">Schedule (NEXT)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNext_description">Next there is something planned</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNone_name">Schedule (NONE)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNone_description">Now there is nothing planned and soon there is nothing planned</string>
+    <string name="notificationChannel_updateCenter_name">Update Center</string>
+    <string name="notificationChannel_updateCenter_description">New update notification</string>
+
+    <string name="batteryOptimizationDialog_title">Battery optimization</string>
+    <string name="batteryOptimizationDialog_message">We ask you to disable battery optimization</string>
+    <string name="batteryOptimizationDialog_disable">Disable</string>
+    <string name="batteryOptimizationDialog_cancel">Cancel</string>
+
+    <string name="error_appNull_title">ERROR!</string>
+    <string name="error_appNull_message">Initialize error!\nContact to developer!\nVersion: %s\nCode: %s\n\nActivity: %s</string>
+
+    <string name="scheduleInformator_notification_none_title">Application active</string>
+    <string name="scheduleInformator_notification_none_text">There are no events in the near future</string>
+    <string name="scheduleInformator_notification_next_title">Rest! (%s)</string>
+    <string name="scheduleInformator_notification_next_text">Next: %s</string>
+    <string name="scheduleInformator_notification_now_title">%s! (%s)</string>
+    <string name="scheduleInformator_notification_now_next_text">Next: %s</string>
+
+
+    <string name="settings_activityTitle">KiwSchool - Settings</string>
+    <string name="settings_notification_categoryTitle">Notification</string>
+    <string name="settings_notification_isNotification_title">Show in notification</string>
+    <string name="settings_notification_isNotification_summary">Show status of selected preset in notification</string>
+    <string name="settings_notification_isHideEmptyNotification_title">Hide empty notification</string>
+    <string name="settings_notification_isHideEmptyNotification_summary">Disable if app crash</string>
+    <string name="settings_notification_infoBeforeTime_title">Show information</string>
+    <string name="settings_notification_infoBeforeTime_summary">Show info in notification before N hours units start event</string>
+    <string name="settings_presetEditor_categoryTitle">Preset editor</string>
+    <string name="settings_presetEditor_isFirstMonday_title">First week day</string>
+    <string name="settings_presetEditor_isFirstMonday_summaryOn">Monday</string>
+    <string name="settings_presetEditor_isFirstMonday_summaryOff">Sunday</string>
+    <string name="settings_presetEditor_eventNameInNextLine_title">Name in next line</string>
+    <string name="settings_presetEditor_eventNameInNextLine_summaryOn">Example:\n1 10:00–10:40\n\t\t\tEvent</string>
+    <string name="settings_presetEditor_eventNameInNextLine_summaryOff">Example:\n1 10:00–10:40 Event</string>
+    <string name="settings_advanced_categoryTitle">Advanced</string>
+    <string name="settings_advanced_builtinPresetList_title">Built-in presets</string>
+    <string name="settings_advanced_builtinPresetList_summary">Put built-in presets to preset list</string>
+    <string name="settings_advanced_developerFeatures_title">Developer features</string>
+    <string name="settings_advanced_developerFeatures_summary" />
+    <string name="settings_advanced_shareAppTrace_title">Share debug info</string>
+    <string name="settings_advanced_shareAppTrace_summary">Share AppTrace logs to developer!</string>
+
+    <string name="duration_3600">1H</string>
+    <string name="duration_7200">2H</string>
+    <string name="duration_10800">3H</string>
+    <string name="duration_14400">4H</string>
+    <string name="duration_18000">5H</string>
+    <string name="duration_21600">6H</string>
+    <string name="duration_25200">7H</string>
+    <string name="duration_28800">8H</string>
+    <string name="duration_32400">9H</string>
+    <string name="duration_36000">10H</string>
+    <string name="duration_39600">11H</string>
+    <string name="duration_43200">12H</string>
+    <string name="duration_infinity">Always</string>
+
+    <string name="mainWidget_description">Main app widget</string>
+
+    <string name="debug_activityTitle">Developer tools</string>
+</resources>

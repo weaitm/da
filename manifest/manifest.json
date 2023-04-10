@@ -1,0 +1,20 @@
+{
+  "developerSchedule": {
+    "lessons": {},
+    "schedules": {},
+    "version": 4
+  },
+  "isTechnicalWorks": false,
+  "latestVersion": {
+    "changelog": {
+      "default": "Currently application version is deprecated!\nDownload latest stable version:\nhttps://fazziclay.github.io/schoolguide",
+      "ru": "Текущая версия приложения устарела!\nСкачайте последнюю стабильную версию:\nhttps://fazziclay.github.io/schoolguide"
+    },
+    "code": 39,
+    "downloadUrl": "https://github.com/FazziCLAY/SchoolGuide/releases/download/v39/schoolguide_v39.apk",
+    "name": "0.4 - REWRITTEN",
+    "pageUrl": "https://fazziclay.github.io/schoolguide"
+  },
+  "manifestKey": 50,
+  "version": 4
+}

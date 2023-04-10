@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/openUpdateCenterItem" android:title="@string/mainOptionMenu_openUpdateCenter"/>
+    <item
+        android:id="@+id/openMathTreningGameItem"
+        android:title="@string/mainOptionMenu_openMathTreningGame"
+        android:visible="false" />
+    <item android:id="@+id/openSettingsItem" android:title="@string/mainOptionMenu_openSettings" />
+    <item android:id="@+id/openAbout" android:title="@string/mainOptionMenu_openAbout" />
+    <item
+        android:id="@+id/openDebugItem"
+        android:title="@string/mainOptionMenu_openDebug"
+        android:visible="false" />
+</menu>

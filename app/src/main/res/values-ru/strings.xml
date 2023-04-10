@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Rewtitten v36 -->
+    <string name="updatecenter_activityTitle">KivSchool - Центр обновлений</string>
+    <string name="updatecenter_loading">Загрузка</string>
+    <string name="updatecenter_error_title">Ошибка :(</string>
+    <string name="updatecenter_error_unknownHost_text">$[-#ff2222]Отсутствует подключение к $[@bold]интернету$[@reset]!</string>
+    <string name="updatecenter_error_unknownHost_reload">Перезагрузить</string>
+    <string name="updatecenter_error_fileNotFound_text">$[@bold;-#ff0000]Сервис закрыт :($[@reset;-reset]\nПриложение не смогло найти последнюю версию, $[@bold;-#dddddd]очень рекомендуем зайти на страницу проекта:$[@reset;-reset]\nhttps://github.com/FazziCLAY/SchoolGuide</string>
+    <string name="updatecenter_error_incompatibleVersion_text">"$[@bold;-#ff0000]Tg developer: @ahoaoaosod$[@reset;-reset]\n\n$[@bold;-#dddddd]Скачать последнюю стабильную версию, посмотреть новости про разработку!:$[@reset;-reset]\nhttps://t.me/kivschool"</string>
+    <string name="updatecenter_error_generic_text">$[-#ffffff;@bold]Неизвестная ошибка.$[@reset;-reset]\nПриложение не смогло распознать ошибку, скорее всего сейчас технические неполадки\nОшибка: $[=#080607;-#cc0000;=#000000]%s</string>
+    <string name="updatecenter_updated_title">Обновлено!</string>
+    <string name="updatecenter_updated_text">$[-#a0a0ff]Сейчас у вас установлена $[@bold;-#7070ff]самая последняя$[@reset;-#a0a0ff] версия, так держать!</string>
+    <string name="updatecenter_outdated_title">Доступно обновление\n\'%s\'</string>
+    <string name="updatecenter_outdated_changelogEmpty_text">Список изменений пуст</string>
+    <string name="updatecenter_outdated_openDownloadLink">Загрузить</string>
+    <string name="updatecenter_outdated_downloadError_activityNotFound">Пожалуйста установите web-браузер (например FireFox)</string>
+    <string name="updatecenter_outdated_downloadError_urlNull">Ошибка центра обновления: URL-адрес пуст</string>
+    <string name="updatecenter_notification_title">Доступно обновление SchoolGuide</string>
+    <string name="updatecenter_notification_text">Пожалуйста скачайте новое обновление приложения</string>
+
+    <string name="mainOptionMenu_openUpdateCenter">Центр обновлений</string>
+    <string name="mainOptionMenu_openUpdateCenter_available">(!) ДОСТУПНО ОБНОВЛЕНИЕ (!)</string>
+    <string name="mainOptionMenu_openMathTreningGame">Игра \'MathTrening\'</string>
+    <string name="mainOptionMenu_openSettings">Настройки</string>
+    <string name="mainOptionMenu_openDebug">Отладка</string>
+    <string name="mainOptionMenu_openAbout">О приложении</string>
+
+    <string name="mathTreningGame_activityTitle">KivSchool - MathTrening</string>
+    <string name="mathTreningGame_optionMenu_skip">Пропустить</string>
+    <string name="mathTreningGame_optionMenu_gameSettings">Настройки игры</string>
+    <string name="mathTreningGame_statistic">Счёт: %s</string>
+    <string name="mathTreningGame_resultInput_hint">Результат</string>
+    <string name="mathTreningGame_settings_title">Настройки игры</string>
+    <string name="mathTreningGame_settings_action">Действие:</string>
+    <string name="mathTreningGame_settings_generation">Генерация:</string>
+    <string name="mathTreningGame_settings_generation_number1">Число 1:</string>
+    <string name="mathTreningGame_settings_generation_number2">Число 2:</string>
+    <string name="mathTreningGame_settings_generation_min">Минимум</string>
+    <string name="mathTreningGame_settings_generation_max">Максимум</string>
+    <string name="mathTreningGame_settings_cancel">Отмена</string>
+    <string name="mathTreningGame_settings_apply">Применить</string>
+    <string name="mathTreningGame_settings_resetScore">Сбросить счёт</string>
+    <string name="mathTreningGame_settings_exception_number">Ошибка чисел!</string>
+    <string name="mathTreningGame_resetScore_title">Сбросить счёт</string>
+    <string name="mathTreningGame_resetScore_message">Вы действительно хотите сбросить счёт игры?</string>
+    <string name="mathTreningGame_resetScore_reset">Сбросить!</string>
+    <string name="mathTreningGame_resetScore_cancel">Отмена</string>
+    <string name="mathTreningGame_resetScore_easterEgg1">А ловко ты это придумал, я даже сначала не понял, молодец!</string>
+
+    <string name="presetList_activityTitle">KivSchool - Список семестров</string>
+    <string name="presetList_addPreset_contentDescription">Добавить пресет</string>
+    <string name="presetList_createNew_nameHint">Введите название</string>
+    <string name="presetList_createNew_title">Создать новый пресет</string>
+    <string name="presetList_createNew_create">Создать</string>
+    <string name="presetList_createNew_cancel">Отмена</string>
+    <string name="presetList_delete_title">Удалить пресет \'%s\'</string>
+    <string name="presetList_delete_message">Вы действительно хотите удалить пресет?</string>
+    <string name="presetList_delete">Удалить</string>
+    <string name="presetList_delete_cancel">Отмена</string>
+    <string name="presetList_copy_nameHint">Введите новое название</string>
+    <string name="presetList_copy_title">Копирование пресета \'%s\'</string>
+    <string name="presetList_copy_message">Вы хотите сделать копию пресета?\nВы можете ввести название для нового пресета ниже</string>
+    <string name="presetList_copy">Копировать</string>
+    <string name="presetList_copy_cancel">Отмена</string>
+    <string name="presetList_copy_copyPattern">Копия \'%s\'</string>
+    <string name="presetList_exception_presetNameEmpty">Название не должно быть пустым!</string>
+    <string name="presetList_rename_nameHint">Введите новое название</string>
+    <string name="presetList_rename_title">Переименованите \'%s\'</string>
+    <string name="presetList_rename_message" />
+    <string name="presetList_rename">Переименовать</string>
+    <string name="presetList_rename_cancel">Отмена</string>
+    <string name="presetList_emptyMessage_title">Отсутствуют данные</string>
+    <string name="presetList_emptyMessage_message">Нажмите кнопку + для создания с нуля</string>
+    <string name="presetList_error_getPresetView_nullArgs">Ошибка! null</string>
+
+    <string name="presetMenu_copy">Сделать копию</string>
+    <string name="presetMenu_delete">Удалить</string>
+    <string name="presetMenu_colorScheme">Цветовая схема</string>
+    <string name="presetMenu_rename">Переименовать</string>
+    <string name="presetMenu_oneDayMode">Режим одного дня (DEV)</string>
+
+    <string name="presetEdit_activityTitle">Пресет \'%s\'</string>
+    <string name="presetEdit_colorScheme_default">Стандатный</string>
+    <string name="presetEdit_colorScheme_default_description">Стандартный - обычный раскрас без условий</string>
+    <string name="presetEdit_colorScheme_yesterday">Предыдущий</string>
+    <string name="presetEdit_colorScheme_yesterday_description">Предыдущий - окрашивает событие в зелёный, если в прошлый день его не было, а если было - то серый</string>
+    <string name="presetEdit_colorScheme_apply">Применить</string>
+    <string name="presetEdit_colorScheme_title">Цветовая схема</string>
+    <string name="presetEdit_colorScheme_message" />
+    <string name="presetEdit_colorScheme_cancel">Отмена</string>
+    <string name="presetEdit_addEvent_contentDescription">Добавить событие</string>
+    <string name="presetEdit_emptyDay"><![CDATA[<Пусто>]]></string>
+    <string name="presetEdit_error_presetNotFound">Ошибка: Пресет не найден</string>
+    <string name="presetEdit_eventDialog_title_edit">Редактировать событие</string>
+    <string name="presetEdit_eventDialog_title_add">Добавить событие</string>
+    <string name="presetEdit_eventDialog_cancel">Отмена</string>
+    <string name="presetEdit_eventDialog_apply">Применить</string>
+    <string name="presetEdit_eventDialog_eventsInfos_createNew"><![CDATA[<Создать новый>]]></string>
+    <string name="presetEdit_eventDialog_delete">Удалить</string>
+    <string name="presetEdit_eventDialog_delete_cancel">Отмена</string>
+    <string name="presetEdit_eventDialog_delete_apply">ПОДТВЕРДИТЬ УДАЛЕНИЕ!</string>
+    <string name="presetEdit_eventDialog_event_title">Цель события:</string>
+    <string name="presetEdit_eventDialog_event_name_hint">Введите новое название</string>
+    <string name="presetEdit_eventDialog_startTime_title">Время начала:</string>
+    <string name="presetEdit_eventDialog_endTime_title">Время конца:</string>
+    <string name="presetEdit_eventDialog_error_prefix">"Ошибка: "</string>
+    <string name="presetEdit_eventDialog_error_nameEmpty">Новое название события пустое!</string>
+    <string name="presetEdit_eventDialog_error_time">Время указано не верно!</string>
+
+    <string name="notificationChannel_scheduleInformator_scheduleNow_name">Расписание (СЕЙЧАС)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNow_description">Уведомляет когда сейчас есть что то запланированное</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNext_name">Расписание (СЛЕД.)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNext_description">Уведомляет когда сейчас нету ничего запланированного, но скоро оно появится</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNone_name">Расписание (ПУСТО)</string>
+    <string name="notificationChannel_scheduleInformator_scheduleNone_description">Уведомляет когда сейчас нету ничего (когда статус пуст)</string>
+    <string name="notificationChannel_updateCenter_name">Центр обновлений</string>
+    <string name="notificationChannel_updateCenter_description">Уведомит о новом обновлении приложения</string>
+
+    <string name="batteryOptimizationDialog_title">Оптимизация батареи</string>
+    <string name="batteryOptimizationDialog_message">Просим вас ОТКЛЮЧИТЬ оптимизацию батареи для приложения, так оно лучше работает</string>
+    <string name="batteryOptimizationDialog_disable">ОТКЛЮЧИТЬ</string>
+    <string name="batteryOptimizationDialog_cancel">Отмена</string>
+
+    <string name="error_appNull_title">ОШИБКА!</string>
+    <string name="error_appNull_message">Ошибка инициализации!\nСвяжитесь с разработчиком!\nВерсия: %s\nКод: %s\n\nActivity: %s</string>
+
+    <string name="scheduleInformator_notification_none_title">Приложение активно</string>
+    <string name="scheduleInformator_notification_none_text">В ближайшее время событий нету</string>
+    <string name="scheduleInformator_notification_next_title">Отдых! (%s)</string>
+    <string name="scheduleInformator_notification_next_text">След.: %s</string>
+    <string name="scheduleInformator_notification_now_title">%s! (%s)</string>
+    <string name="scheduleInformator_notification_now_next_text">След.: %s</string>
+
+    <string name="settings_activityTitle">KivSchool - Настройки</string>
+    <string name="settings_notification_categoryTitle">Уведомление</string>
+    <string name="settings_notification_isNotification_title">Показывать уведомление</string>
+    <string name="settings_notification_isNotification_summary">Показывать в уведомлении текущий статус по включенному расписанию</string>
+    <string name="settings_notification_isHideEmptyNotification_title">Скрывать уведомление без статуса</string>
+    <string name="settings_notification_isHideEmptyNotification_summary">Когда уведомление показывает пустоту, оно будет исчезать\n(Отключите, если после исчезновения, уведомление больше не появляется)</string>
+    <string name="settings_notification_infoBeforeTime_title">Показывать информацию</string>
+    <string name="settings_notification_infoBeforeTime_summary">Показывать информацию за N часов до начала события</string>
+    <string name="settings_presetEditor_categoryTitle">Редактор пресета</string>
+    <string name="settings_presetEditor_isFirstMonday_title">Первый день недели</string>
+    <string name="settings_presetEditor_isFirstMonday_summaryOn">Понедельник</string>
+    <string name="settings_presetEditor_isFirstMonday_summaryOff">Воскресенье</string>
+    <string name="settings_presetEditor_eventNameInNextLine_title">Название на след. строке</string>
+    <string name="settings_presetEditor_eventNameInNextLine_summaryOn">Пример:\n1 10:00–10:40\n\t\t\tСобытие</string>
+    <string name="settings_presetEditor_eventNameInNextLine_summaryOff">Пример:\n1 10:00–10:40 Событие</string>
+    <string name="settings_advanced_categoryTitle">Дополнительно</string>
+    <string name="settings_advanced_builtinPresetList_title">Встроенные пресеты</string>
+    <string name="settings_advanced_builtinPresetList_summary">Отображать встроенный список пресетов в списке (их названия будут серыми)</string>
+    <string name="settings_advanced_developerFeatures_title">Возможности разработчика</string>
+    <string name="settings_advanced_developerFeatures_summary">Активирует возможности разработчика\n(не рекомендуется для обычного использования)</string>
+    <string name="settings_advanced_shareAppTrace_title">Поделиться отладочной информацией</string>
+    <string name="settings_advanced_shareAppTrace_summary">Пришлите AppTrace-логи разработчику!</string>
+
+    <string name="duration_3600">1Ч</string>
+    <string name="duration_7200">2Ч</string>
+    <string name="duration_10800">3Ч</string>
+    <string name="duration_14400">4Ч</string>
+    <string name="duration_18000">5Ч</string>
+    <string name="duration_21600">6Ч</string>
+    <string name="duration_25200">7Ч</string>
+    <string name="duration_28800">8Ч</string>
+    <string name="duration_32400">9Ч</string>
+    <string name="duration_36000">10Ч</string>
+    <string name="duration_39600">11Ч</string>
+    <string name="duration_43200">12Ч</string>
+    <string name="duration_infinity">Всегда</string>
+
+    <string name="mainWidget_description">Главный виджет приложения</string>
+
+    <string name="debug_activityTitle">Инструменты разработчика</string>
+</resources>

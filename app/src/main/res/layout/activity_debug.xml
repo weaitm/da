@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/activityBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ColorUtil.colorize() -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#05ffffff"
+            android:layout_margin="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="ColorUtil.colorize();"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/textColorizeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColor="#ffffff"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textColorizeResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                tools:textColor="#E53935"
+                tools:text="HELLO WORLD" />
+        </LinearLayout>
+
+        <!-- Math.floor() -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#05ffffff"
+            android:layout_margin="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="i2 = Math.floor(i1);"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/mathFloorInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="i1"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#00838F"
+                tools:ignore="HardcodedText" />
+
+
+            <EditText
+                android:id="@+id/mathFloorOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="i2"
+                android:importantForAutofill="no"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#00838F"
+                tools:ignore="HardcodedText,TextFields" />
+        </LinearLayout>
+
+        <!-- Debug signal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#05ffffff"
+            android:layout_margin="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="Debug callback signal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/debugCallbackSignalData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="data"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#00838F"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/debugCallbackSignalSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SEND"
+                tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+
+        <!-- app.pendingGlobalUpdate() -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#05ffffff"
+            android:layout_margin="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="app.pendingUpdateGlobal(x);"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/pendingUpdateGlobalStartupMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="startupMode"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/pendingUpdateGlobalSend"
+                android:text="SEND"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <!-- MilkLog -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#05ffffff"
+            android:layout_margin="10sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="MilkLog.g(logText);"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/milkLogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:hint="logText"
+                android:textColorHint="#00838F"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/milkLogSend"
+                android:text="SEND"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
